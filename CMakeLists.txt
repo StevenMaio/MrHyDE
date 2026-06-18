@@ -195,6 +195,12 @@ IF(MrHyDE_ENABLE_HDSA)
   MESSAGE("-- HDSA has been enabled.")
 ENDIF()
 
+IF(MrHyDE_ENABLE_OED)
+  ADD_DEFINITIONS(-DMrHyDE_ENABLE_OED)
+  SET(OedLib_SRC_DIR ${OedLib_SRC_DIR})
+  MESSAGE("-- OED has been enabled.")
+ENDIF()
+
 IF(MrHyDE_ENABLE_PDRISK)
   ADD_DEFINITIONS(-DMrHyDE_ENABLE_PDRISK)
   MESSAGE("-- PDRISK has been enabled.")

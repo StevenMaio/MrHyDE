@@ -115,6 +115,10 @@ public:
   /** @brief Read Exodus output and perform a forward solve. */
   void readExoForwardSolve();
 #endif
+#if defined(MrHyDE_ENABLE_OED)
+  /** @brief Execute OED analysis. */
+  void OEDSolve();
+#endif
 
   /** @brief Run DCI analysis. */
   void DCISolve();

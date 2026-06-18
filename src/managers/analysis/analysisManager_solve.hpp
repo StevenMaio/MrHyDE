@@ -97,6 +97,11 @@ void AnalysisManager::run(std::string &analysis_type) {
     this->readExoForwardSolve();
   }
 #endif
+#if defined(MrHyDE_ENABLE_OED)
+  else if (analysis_type == "OED") {
+    this->OEDSolve();
+  }
+#endif
   else if (analysis_type == "DCI") {
     this->DCISolve();
   }
@@ -1007,6 +1012,19 @@ void AnalysisManager::HDSASolve()
 {
   HDSA::Ptr<Driver_MrHyDE<ScalarT>> hdsa_driver = HDSA::makePtr<Driver_MrHyDE<ScalarT>>(comm_, settings_, solver_, postproc_, params_); 
   hdsa_driver->HDSA_Solve();
+}
+#endif
+
+// ========================================================================================
+// ========================================================================================
+
+#if defined(MrHyDE_ENABLE_OED)
+#include <memory>
+
+void AnalysisManager::OEDSolve()
+{
+  auto oed_driver = std::make_shared<OED::Driver_MrHyDE<ScalarT>>();
+  oed_driver->OED_Solve();
 }
 #endif
 

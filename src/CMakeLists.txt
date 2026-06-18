@@ -4,6 +4,10 @@
 INCLUDE_DIRECTORIES ( ./
   ${Trilinos_INCLUDE_DIRS} 
   ${Trilinos_TPL_INCLUDE_DIRS}
+)
+
+IF(MrHyDE_ENABLE_HDSA)
+INCLUDE_DIRECTORIES (
   ${HdsaLib_SRC_DIR}/src/core/model_discrepancy/interfaces/hyperparameter_interfaces
   ${HdsaLib_SRC_DIR}/src/core/model_discrepancy/interfaces/problem_interfaces
   ${HdsaLib_SRC_DIR}/src/core/model_discrepancy/interfaces/ouu_interfaces
@@ -23,6 +27,23 @@ INCLUDE_DIRECTORIES ( ./
   ${HdsaLib_SRC_DIR}/interfaces/mrhyde/md_interfaces
   ${HdsaLib_SRC_DIR}/interfaces/mrhyde/auxiliary
   ${HdsaLib_SRC_DIR}/interfaces/rol
+)
+ENDIF()
+
+IF(MrHyDE_ENABLE_OED)
+INCLUDE_DIRECTORIES(
+    ${OedLib_SRC_DIR}/src/core/bayesian_inversion
+    ${OedLib_SRC_DIR}/src/core/optimal_experimental_design
+    ${OedLib_SRC_DIR}/src/core/base/oed
+    ${OedLib_SRC_DIR}/src/core/algorithms
+    ${OedLib_SRC_DIR}/src/core/base/linear_algebra
+    ${OedLib_SRC_DIR}/src/core/base/vectors
+    ${OedLib_SRC_DIR}/include
+    ${OedLib_SRC_DIR}/interfaces/mrhyde
+)
+ENDIF()
+
+INCLUDE_DIRECTORIES (
   physics
   interfaces/compadre
   interfaces/discretization

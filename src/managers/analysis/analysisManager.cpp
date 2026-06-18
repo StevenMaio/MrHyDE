@@ -34,6 +34,10 @@
 #include "ROL_PrimalDualRisk.hpp"
 #endif
 
+#if defined(MrHyDE_ENABLE_OED)
+#include "OED_Driver_MrHyDE.hpp"
+#endif
+
 using namespace MrHyDE;
 
 #include "analysisManager_construct.hpp"
