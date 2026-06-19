@@ -1023,7 +1023,7 @@ void AnalysisManager::HDSASolve()
 
 void AnalysisManager::OEDSolve()
 {
-  auto oed_driver = std::make_shared<OED::Driver_MrHyDE<ScalarT>>();
+  auto oed_driver = std::make_shared<OED::Driver_MrHyDE<ScalarT>>(comm_, settings_, solver_, postproc_, params_);
   oed_driver->OED_Solve();
 }
 #endif
