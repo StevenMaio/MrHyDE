@@ -39,8 +39,8 @@ INCLUDE_DIRECTORIES(
     ${OedLib_SRC_DIR}/src/core/base/linear_algebra
     ${OedLib_SRC_DIR}/src/core/base/vectors
     ${OedLib_SRC_DIR}/src/core/utils
-    ${OedLib_SRC_DIR}/src/core/adapters/trilinos/adapters
-    ${OedLib_SRC_DIR}/src/core/adapters/trilinos/core
+    ${OedLib_SRC_DIR}/src/adapter/trilinos/adapter
+    ${OedLib_SRC_DIR}/src/adapter/trilinos/core
     ${OedLib_SRC_DIR}/src/impl/bayesian_inversion/model_error
     ${OedLib_SRC_DIR}/include
     ${OedLib_SRC_DIR}/interfaces/mrhyde
