@@ -44,7 +44,7 @@ PostprocessManager<Node>::PostprocessManager(const Teuchos::RCP<MpiComm> & Comm_
   Teuchos::TimeMonitor constructortimer(*constructortime);
 
   this->setup();
-#if defined(MrHyDE_ENABLE_HDSA)
+#if defined(MrHyDE_ENABLE_HDSA) || defined(MrHyDE_ENABLE_OED)
   hdsa_solop = false;
 #endif
 }
@@ -138,7 +138,7 @@ void PostprocessManager<Node>::setup() {
   save_solution = false;
   save_adjoint_solution = false; // very rarely is this true
   
-  if (analysis_type == "forward+adjoint" || analysis_type == "ROL" || analysis_type == "ROL2" || analysis_type == "ROLStoch" || analysis_type == "ROL_SIMOPT" || analysis_type == "HDSA" || analysis_type == "HDSAStoch") {
+  if (analysis_type == "forward+adjoint" || analysis_type == "ROL" || analysis_type == "ROL2" || analysis_type == "ROLStoch" || analysis_type == "ROL_SIMOPT" || analysis_type == "HDSA" || analysis_type == "OED" || analysis_type == "HDSAStoch") {
     save_solution = true; // default is false
     string rolVersion = "ROL";
     if (analysis_type == "ROL2") {

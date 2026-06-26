@@ -123,7 +123,7 @@ namespace MrHyDE {
     /** @brief Update parameters using a ROL-style optimization vector. */
     void updateParams(MrHyDE_OptVector & newparams);
 
-#if defined(MrHyDE_ENABLE_HDSA)
+#if defined(MrHyDE_ENABLE_HDSA) || defined(MrHyDE_ENABLE_OED)
     /** @brief Update parameters using a multivector for HDSA workflows. */
     void updateParams(const vector_RCP & newparams);
 #endif

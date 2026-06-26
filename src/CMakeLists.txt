@@ -42,6 +42,7 @@ INCLUDE_DIRECTORIES(
     ${OedLib_SRC_DIR}/src/adapter/trilinos/adapter
     ${OedLib_SRC_DIR}/src/adapter/trilinos/core
     ${OedLib_SRC_DIR}/src/impl/bayesian_inversion/model_error
+    ${OedLib_SRC_DIR}/src/impl/bayesian_inversion/observation_operator
     ${OedLib_SRC_DIR}/include
     ${OedLib_SRC_DIR}/interfaces/mrhyde
 )

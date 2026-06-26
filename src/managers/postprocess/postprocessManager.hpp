@@ -717,7 +717,7 @@ public:
   Teuchos::RCP<fftInterface> fft; ///< FFT interface.
 #endif
   
-#if defined(MrHyDE_ENABLE_HDSA)
+#if defined(MrHyDE_ENABLE_HDSA) || defined(MrHyDE_ENABLE_OED)
   bool hdsa_solop; ///< Whether HDSA is active.
   vector<Teuchos::RCP<SolutionStorage<Node>>> hdsa_solop_data; ///< HDSA output data.
 #endif

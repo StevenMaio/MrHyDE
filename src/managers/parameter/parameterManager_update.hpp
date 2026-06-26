@@ -8,7 +8,7 @@
 
 // ========================================================================================
 // ========================================================================================
-#if defined(MrHyDE_ENABLE_HDSA)
+#if defined(MrHyDE_ENABLE_HDSA) || defined(MrHyDE_ENABLE_OED)
 template<class Node>
 void ParameterManager<Node>::updateParams(const vector_RCP & newparams) {
 

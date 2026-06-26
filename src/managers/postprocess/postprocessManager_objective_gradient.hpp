@@ -94,7 +94,7 @@ void PostprocessManager<Node>::computeObjectiveGradParam(vector<vector_RCP> &cur
       objectiveval += newobj;
     }
   }
-#if defined(MrHyDE_ENABLE_HDSA)
+#if defined(MrHyDE_ENABLE_HDSA) || defined(MrHyDE_ENABLE_OED)
   if (hdsa_solop)
   {
     objectiveval = 0.0;
@@ -973,7 +973,7 @@ void PostprocessManager<Node>::computeObjectiveGradState(const size_t &set,
     {
       size_t block = objectives[r].block;
 
-#if defined(MrHyDE_ENABLE_HDSA)
+#if defined(MrHyDE_ENABLE_HDSA) || defined(MrHyDE_ENABLE_OED)
       if (hdsa_solop)
       {
         vector_RCP D_soln;
@@ -1032,7 +1032,7 @@ void PostprocessManager<Node>::computeObjectiveGradState(const size_t &set,
                                           assembler->wkset_AD32[block],
                                           assembler->function_managers_AD32[block]);
         }
-#if defined(MrHyDE_ENABLE_HDSA)
+#if defined(MrHyDE_ENABLE_HDSA) || defined(MrHyDE_ENABLE_OED)
       }
 #endif
     }
