@@ -45,6 +45,7 @@ INCLUDE_DIRECTORIES(
     ${OedLib_SRC_DIR}/src/impl/bayesian_inversion/observation_operator
     ${OedLib_SRC_DIR}/include
     ${OedLib_SRC_DIR}/interfaces/mrhyde
+    ${OedLib_SRC_DIR}/interfaces/mrhyde/obs
 )
 ENDIF()
 
